@@ -22,9 +22,6 @@ build:
 
 dev-publish:
   stage: publish
-  environment:
-    name: dev-env
-    url: http://ec2-54-76-114-110.eu-west-1.compute.amazonaws.com/api/cicd
   only:
     - develop
   image: docker:18-git
@@ -41,9 +38,6 @@ dev-publish:
 
 dev-deploy:
   stage: deploy
-  environment:
-    name: dev-env
-    url: http://ec2-54-76-114-110.eu-west-1.compute.amazonaws.com/api/cicd
   only:
     - develop
   image: node:14
@@ -60,9 +54,6 @@ dev-deploy:
 
 stage-publish:
   stage: publish
-  environment:
-    name: stage-env
-    url: http://ec2-54-78-81-113.eu-west-1.compute.amazonaws.com/api/cicd
   only:
     - stage
   image: docker:18-git
@@ -79,9 +70,6 @@ stage-publish:
 
 stage-deploy:
   stage: deploy
-  environment:
-    name: stage-env
-    url: http://ec2-54-78-81-113.eu-west-1.compute.amazonaws.com/api/cicd
   only:
     - stage
   image: node:14
